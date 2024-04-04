@@ -1,0 +1,356 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap'); /*Texto no Modal*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /*Legenda, título, botões */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(124 59 124);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-family: 'Bebas Neue';
+}
+/*Seção-01*/
+#musicas {
+    width: auto;
+    height: 100vh;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    background-color: #000000;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    text-align: center;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/*Icons*/
+.redes-sociais{
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: flex;
+    position: relative;
+    bottom: 60px;
+    vertical-align:bottom;
+}
+.icon{
+    width: 32px;
+    height: 32px;
+    padding: auto;
+    margin: 10px;
+    display: flex;
+    
+}
+.redes-sociais p{
+    display: flex;
+    position: absolute;
+    margin: 10px;
+}
+.icon:hover{
+    box-shadow: none;
+}
+
+/*menu*/
+ul, li{
+    margin: 0px;
+    padding: 0px;
+    list-style:none;
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+}
+li a:hover{
+    color: rgb(124 59 124);
+}
+.header{
+    background-color: #000000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    }
+.menu{
+    display: flex;
+}
+.menu li a{
+    padding: 10px;
+    display: block;
+}
+.menu li{
+    margin-left: 10px;
+}
+li a{
+    letter-spacing: 3px;
+}
+
+/*H2*/
+h2, .minu{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Bebas Neue';
+    margin-bottom: 10px;
+    padding-top: 30px;
+}
+.minu{
+    font-size: 30px;
+    padding-top: 10px;
+    margin-top: -19px;
+}
+
+/*imagem*/
+.corpo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.imagens{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a img:hover{
+    box-shadow: 0px 0px 20px black;
+}
+.moonlight, .antifragile, .tukoh, .decision{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+/*Legendas*/
+div .legenda{
+    font-family: 'Bebas Neue';
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+/*botão*/
+.botoes{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin-top: 5px;    
+}
+
+.j a, .l a, .t a, .b a{
+    text-decoration: none;
+    text-shadow: 2px 2px black;
+    padding: 3px 30px;
+    border: 1px solid black;
+    cursor:pointer;
+    border-radius: 20px;
+    background-color: #000000;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-family: 'Bebas Neue';
+    color: aliceblue;
+}
+
+
+/* Modal */
+.pae{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(58, 57, 57, 0.7);
+    transition: all 0.4s;
+    width: 100%;
+    height: 100vh;
+}
+.pae:target {
+    visibility: visible;
+    opacity: 1;
+    position:fixed;
+}
+.img{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px;
+}
+.box{
+    width: 755px;
+    height: 500px;
+    position:absolute;
+    background-color: rgb(54, 54, 54);
+    border-radius: 10px;
+    overflow: scroll;
+}
+.box::-webkit-scrollbar{
+    width: 10px;
+    background-color:transparent;
+}
+.box::-webkit-scrollbar-thumb{
+    background-color: rgb(0, 0, 0);
+    border-radius:20px;
+    border: 3px solid transparent;
+}
+.box::-webkit-scrollbar-corner{
+    background-color: transparent;
+}
+hr{
+    color: black;
+    border: 0.5px solid #000000;
+}
+h1{
+    font-family: 'Bebas Neue';
+    font-size: 40px;
+    position: relative;
+    text-align: justify;
+    color: rgb(215 172 101);
+    margin: 10px 20px;
+    letter-spacing: 1.5px;
+}
+.close-l, .close-t, .close-b, .close-j{
+    position: absolute;
+    text-decoration: none;
+    color:white;
+    margin-bottom: 30px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-family: arial;
+    font-size: 25px;
+    font-weight: bold;
+    z-index: 999;
+}
+.close-l:hover{
+    color: rgb(00, 00, 00);
+
+}
+.close-t:hover{
+    color: rgb(255, 0, 0);
+
+}
+.close-b:hover{
+    color:rgb(125 0 1);
+}
+.close-j:hover{
+    color:rgb(176 146 118);
+}
+.texto{
+    font-size: 16px;
+    font-family: 'Oswald';
+}
+.um{
+    position: absolute;
+    margin-top: -48px;
+    margin-left: 325px;
+    margin-right: 12px; 
+    text-align: justify;
+}
+.dois{
+    position: absolute;
+    margin-left: 325px;
+    text-align: justify;
+    margin-top: 170px;
+    margin-right: 12px;
+}
+.tres{
+    position: absolute;
+    margin-left: 15px;
+    text-align: justify;
+    margin-top: 258px;
+    margin-right: 12px;
+    
+}
+
+/*Barra de rolagem*/    
+::-webkit-scrollbar{
+    width: 15px;
+    background-color: rgb(124 59 124);;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(0, 0, 0);
+    border-radius:20px;
+    border: 3px solid rgb(124 59 124);
+}
+
+@media screen and (min-width: 780px) and (max-width: 1029px) {
+    .corpo {
+        display: flex;
+        position: relative;
+        padding-bottom: 5rem;
+    }
+    .imagens {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+    .footer {
+        width: 100%;
+        position: relative;
+        margin-top: 25rem;
+        bottom: 0px;
+    }
+    .botoes {
+        position: relative;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .corpo {
+        display: flex;
+        position: relative;
+        padding-bottom: 5rem;
+    }
+    .imagens {
+        flex-flow: column;
+        margin: 20px;
+    }
+    .footer {
+        width: 100%;
+        position: relative;
+        margin-top: 81rem;
+    }
+    .botoes {
+        position: relative;
+        margin-bottom: 30px;
+    }
+}
