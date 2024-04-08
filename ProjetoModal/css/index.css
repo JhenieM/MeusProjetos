@@ -99,10 +99,104 @@ li a:hover{
     justify-content: space-between;
     padding: 20px;
     align-items: center;
-    }
-.menu{
-    display: flex;
 }
+
+/* DAQUI */
+.menu-elements {
+    display: flex;
+    width: 80%;
+    height: 10vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-elements li{
+    list-style: none;
+    font-size: 1.4rem;
+    margin: 2rem 0;
+    font-size: 1.4rem;
+    list-style: none;
+}
+
+.menu-hamburger{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-hamburger{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-self: auto;
+    color: white;
+}
+
+.menu-nav{
+    display: flex;
+    width: 80%;
+    height: 10vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* BOTÃO MENU HAMBURGUER */
+  
+.hamburguer {
+    position: relative;
+    display: block;
+    background: #fff;
+    width: 30px;
+    height: 2px;
+    top: 29px;
+    left: 15px;
+    transition: 0.5s ease-in-out;
+}
+  
+.hamburguer:before,
+.hamburguer:after {
+    background: #ffff;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+}
+  
+.hamburguer:before {
+    top: -10px;
+}
+  
+.hamburguer:after {
+    bottom: -10px;
+}
+  
+input {
+    display: none;
+}
+
+/* rotação dos elementos do span */
+input:checked ~ label .hamburguer {
+    transform: rotate(45deg);
+}
+
+input:checked ~ label .hamburguer:before {
+    transform: rotate(90deg);
+    top: 0;
+}
+  
+input:checked ~ label .hamburguer:after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+input:checked ~ .menu-hamburguer-elements{
+    left: 0;
+}
+
+/* ATÉ AQUI */
+
 .menu li a{
     padding: 10px;
     display: block;
@@ -353,3 +447,39 @@ h1{
         margin-bottom: 30px;
     }
 }
+
+/* DAQUI */
+@media (max-width: 600px){
+    
+    .menu-hamburger{
+        display: flex;
+        width: auto;
+        flex-direction: column;
+        align-self: flex-start;
+        overflow: auto;
+        z-index: 1;
+        color: white
+    }
+
+    .menu-elements{
+        width: 60%;
+        height: 100%;
+        background-color: rgba(10,10,10,.9);
+        position: fixed;
+        left: -60%;
+        top: 0;
+    
+        transition: left cubic-bezier(1,0,0,1) .8s;
+        
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    
+        padding-top: 15vh;
+    
+        z-index: -1;
+    }
+
+}
+/* ATÉ AQUI */
