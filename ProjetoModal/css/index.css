@@ -16,6 +16,144 @@ a {
     font-size: 25px;
     font-family: 'Bebas Neue';
 }
+
+header{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-hamburger {
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+.menu-elements-hamburguer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+
+/* BOTÃO MENU HAMBURGUER */
+.menu {
+    background-color: rgb(124 59 124);
+    width: 60px;
+    height: 60px;
+    margin: 1rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+  
+.hamburguer {
+    position: relative;
+    display: block;
+    background: black;
+    width: 30px;
+    height: 2px;
+    top: 29px;
+    left: 15px;
+    transition: 0.5s ease-in-out;
+}
+  
+.hamburguer:before,
+.hamburguer:after {
+    background: black;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+}
+  
+.hamburguer:before {
+    top: -10px;
+}
+  
+.hamburguer:after {
+    bottom: -10px;
+}
+  
+input {
+    display: none;
+}
+
+/* rotação dos elementos do span */
+input:checked ~ label .hamburguer {
+    transform: rotate(45deg);
+}
+
+input:checked ~ label .hamburguer:before {
+    transform: rotate(90deg);
+    top: 0;
+}
+  
+input:checked ~ label .hamburguer:after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+input:checked ~ .menu-hamburguer-elements{
+    left: 0;
+}
+
+/* ATIVANDO O BOTÃO HAMBURGUER QUANDO O TAMANHO DA TELA ATINGIR 600PX */
+@media screen and (max-width: 600px){
+
+    .menu-elements-hamburguer a:hover{
+        color: rgb(124 59 124);
+    }
+    
+    .menu-hamburger{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-self: flex-start;
+        overflow: auto;
+        z-index: 1;
+        color: white;
+    }
+ 
+    .menu-elements-hamburguer {
+        width: 50%;
+        height: 100%;
+        display: contents;
+        background-color: rgba(10,10,10,.9);
+        position: fixed;
+        top: 0;
+        right: 0px;
+
+        transition:right cubic-bezier(1, 0, 0, 1) .8s;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    
+        padding-top: 15vh;
+    
+        z-index: -1;
+    }
+
+    .menu{
+        display: flex;
+        height: 60px;
+        width: 60px;
+    }
+
+}
+
 /*Seção-01*/
 main {
     flex: 1;
@@ -93,32 +231,16 @@ li a:hover{
     color: rgb(124 59 124);
 }
 
-.menu-hamburger {
-    background-color: #000000;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
-    align-items: center;
-}
 
 input {
     display: none;
 }
 
-/* DAQUI */
-
-/* BOTÃO MENU HAMBURGUER */
-  
-
-
-/* ATÉ AQUI */
-
-.menu-elements li a{
+.menu-elements-hamburguer li a{
     padding: 10px;
     display: block;
 }
-.menu-elements li{
+.menu-elements-hamburguer li{
     margin-left: 10px;
 }
 li a{
@@ -354,100 +476,3 @@ h1{
     }
 }
 
-@media (max-width: 600px){
-    
-    .menu-hamburger {
-        display: flex;
-        flex-direction: column;
-        align-self: flex-end;
-        z-index: 1;
-        color: white;
-        width: 60%;
-    }
-
-    .menu-nav {
-        width: 60%;
-        height: 100%;
-        background-color: rgba(10,10,10,.9);
-        position: fixed;
-        top: 0;
-    
-        transition: right cubic-bezier(1,0,0,1) .8s;
-        
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-    
-        z-index: -1;
-    }
-
-    .menu-elements {
-        width: 100%;
-        height: 100%;
-        display: contents;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .hamburguer {
-        position: relative;
-        width: 30px;
-        height: 3px;
-        display: flex;
-        flex-direction: column;
-        display: flex;
-        transition: 0.5s ease-in-out;
-        background: #fff;
-    }
-
-    .hamburguer:before,
-    .hamburguer:after {
-        background: #ffff;
-        content: '';
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transition: 0.5s ease-in-out;
-    }
-  
-    .hamburguer:before {
-        top: -10px;
-    }
-  
-    .hamburguer:after {
-        bottom: -10px;
-        }
-    
-
-/* rotação dos elementos do span */
-    input:checked ~ label .hamburguer {
-        transform: rotate(45deg);
-    }
-
-    input:checked ~ label .hamburguer:before {
-        transform: rotate(90deg);
-        top: 0;
-    }
-    
-    input:checked ~ label .hamburguer:after {
-        transform: rotate(90deg);
-        bottom: 0;
-    }
-
-    input:checked ~ .menu-hamburguer-elements{
-        left: 0;
-    }
-
-    label {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-    }
-
-}
-/* ATÉ AQUI */
