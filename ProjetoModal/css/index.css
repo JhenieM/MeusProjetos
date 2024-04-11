@@ -45,7 +45,6 @@ header{
 
 
 /* BOTÃO MENU HAMBURGUER */
-
 label {
     position: relative;
     right: -20px;
@@ -64,8 +63,8 @@ label {
     position: relative;
     display: block;
     background: white;
-    width: 30px;
-    height: 3px;
+    width: 35px;
+    height: 4px;
     border-radius: 5px;
     top: 29px;
     left: 15px;
@@ -74,14 +73,14 @@ label {
   
 .hamburguer:before,
 .hamburguer:after {
-    background: white;
+    background: #ffff;
     content: '';
     display: block;
     width: 100%;
     height: 100%;
     position: absolute;
-    transition: 0.5s ease-in-out;
     border-radius: 5px;
+    transition: 0.5s ease-in-out;
 }
   
 .hamburguer:before {
@@ -111,60 +110,10 @@ input:checked ~ label .hamburguer:after {
     bottom: 0;
 }
 
-input:checked ~ .menu-hamburguer-elements{
-    left: 0;
+input:checked ~ .menu-elements-hamburguer {
+    right: 0px;
 }
 
-/* ATIVANDO O BOTÃO HAMBURGUER QUANDO O TAMANHO DA TELA ATINGIR 600PX */
-@media screen and (max-width: 600px){
-
-    header {
-        height: 10%;
-    }
-
-    .menu-elements-hamburguer a:hover{
-        color: red;
-    }
-    
-    .menu-hamburger{
-        display: flex;
-        width: 100%;
-        flex-direction: row;
-        align-self: flex-start;
-        overflow: auto;
-        z-index: 1;
-        padding: 5px 20px;
-        color: white;
-    }
- 
-    .menu-elements-hamburguer {
-        width: 50%;
-        height: 100%;
-        display: contents;
-        background-color: rgba(10,10,10,.9);
-        position: fixed;
-        top: 0;
-        right: -315px;
-
-        transition:right cubic-bezier(1, 0, 0, 1) .8s;
-
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-    
-        padding-top: 15vh;
-    
-        z-index: -1;
-    }
-
-    .menu{
-        display: flex;
-        height: 60px;
-        width: 60px;
-    }
-
-}
 
 /*Seção-01*/
 main {
@@ -211,7 +160,7 @@ a {
     display: flex;
     position: relative;
     bottom: 60px;
-    vertical-align:bottom;
+    vertical-align: bottom;
 }
 .icon {
     width: 32px;
@@ -488,3 +437,47 @@ h1{
     }
 }
 
+/* ATIVANDO O BOTÃO HAMBURGUER QUANDO O TAMANHO DA TELA ATINGIR 600PX */
+@media screen and (max-width: 600px){
+
+    header {
+        height: 10%;
+    }
+    
+    .menu-hamburger{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-self: flex-start;
+        overflow: auto;
+        z-index: 1;
+        padding: 5px 20px;
+        color: white;
+    }
+ 
+    .menu-elements-hamburguer {
+        width: 50%;
+        height: 100%;
+        display: contents;
+        background-color: rgba(10,10,10,.9);
+        position: fixed;
+        top: 0;
+        right: -310px;
+
+        transition:right cubic-bezier(1, 0, 0, 1) .8s;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    
+        z-index: -1;
+    }
+
+    .menu{
+        display: flex;
+        height: 60px;
+        width: 60px;
+    }
+
+}

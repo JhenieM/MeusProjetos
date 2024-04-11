@@ -1,5 +1,5 @@
 function restart(){
-    document.addEventListener('click', () =>{
+    document.addEventListener('click', () => {
         location.reload()
     })
 }
