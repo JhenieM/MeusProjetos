@@ -39,14 +39,19 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px;
     align-items: center;
 }
 
 
 /* BOTÃO MENU HAMBURGUER */
+
+label {
+    position: relative;
+    right: -20px;
+}
+
 .menu {
-    background-color: rgb(124 59 124);
     width: 60px;
     height: 60px;
     margin: 1rem 1rem;
@@ -58,9 +63,10 @@ header{
 .hamburguer {
     position: relative;
     display: block;
-    background: black;
+    background: white;
     width: 30px;
-    height: 2px;
+    height: 3px;
+    border-radius: 5px;
     top: 29px;
     left: 15px;
     transition: 0.5s ease-in-out;
@@ -68,13 +74,14 @@ header{
   
 .hamburguer:before,
 .hamburguer:after {
-    background: black;
+    background: white;
     content: '';
     display: block;
     width: 100%;
     height: 100%;
     position: absolute;
     transition: 0.5s ease-in-out;
+    border-radius: 5px;
 }
   
 .hamburguer:before {
@@ -111,8 +118,12 @@ input:checked ~ .menu-hamburguer-elements{
 /* ATIVANDO O BOTÃO HAMBURGUER QUANDO O TAMANHO DA TELA ATINGIR 600PX */
 @media screen and (max-width: 600px){
 
+    header {
+        height: 10%;
+    }
+
     .menu-elements-hamburguer a:hover{
-        color: rgb(124 59 124);
+        color: red;
     }
     
     .menu-hamburger{
@@ -122,6 +133,7 @@ input:checked ~ .menu-hamburguer-elements{
         align-self: flex-start;
         overflow: auto;
         z-index: 1;
+        padding: 5px 20px;
         color: white;
     }
  
@@ -132,7 +144,7 @@ input:checked ~ .menu-hamburguer-elements{
         background-color: rgba(10,10,10,.9);
         position: fixed;
         top: 0;
-        right: 0px;
+        right: -315px;
 
         transition:right cubic-bezier(1, 0, 0, 1) .8s;
 
