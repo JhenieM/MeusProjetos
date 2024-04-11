@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /*Legenda, título, botões */
 
 body {
-    min-height: 100dvh;
     margin: 0;
     padding: 0;
     background-color: rgb(124 59 124);
@@ -25,14 +24,21 @@ header{
     justify-content: center;
 }
 
+#musicas {
+    height: 100%;
+}
+
 .menu-hamburger {
+    position: fixed;
+    top: 0;
     width: 100%;
     background-color: #000000;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px;
     align-items: center;
+    padding: 20px;
+    z-index: 10;
 }
 
 .menu-elements-hamburguer {
@@ -398,13 +404,11 @@ h1{
 
 /*Barra de rolagem*/    
 ::-webkit-scrollbar{
-    width: 15px;
+    width: 10px;
     background-color: rgb(124 59 124);
 }
 ::-webkit-scrollbar-thumb {
     background-color: rgb(0, 0, 0);
-    border-radius:20px;
-    border: 3px solid rgb(124 59 124);
 }
 
 @media screen and (min-width: 780px) and (max-width: 1270px) {
@@ -440,10 +444,6 @@ h1{
 /* ATIVANDO O BOTÃO HAMBURGUER QUANDO O TAMANHO DA TELA ATINGIR 600PX */
 @media screen and (max-width: 600px){
 
-    header {
-        height: 10%;
-    }
-    
     .menu-hamburger{
         display: flex;
         width: 100%;
@@ -458,11 +458,10 @@ h1{
     .menu-elements-hamburguer {
         width: 50%;
         height: 100%;
-        display: contents;
         background-color: rgba(10,10,10,.9);
         position: fixed;
         top: 0;
-        right: -310px;
+        right: -315px;
 
         transition:right cubic-bezier(1, 0, 0, 1) .8s;
 
@@ -474,7 +473,7 @@ h1{
         z-index: -1;
     }
 
-    .menu{
+    .menu {
         display: flex;
         height: 60px;
         width: 60px;
