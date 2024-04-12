@@ -2,13 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap'); /*Texto no Modal*/
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /*Legenda, título, botões */
 
+html{
+    width: 100dvw;
+}
 body {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100dvh;
-    width: 100dvw;
     background-color: rgb(124 59 124);
     overflow-x: hidden;
 }
@@ -25,14 +24,13 @@ header {
     align-items: center;
     justify-content: center;
     position: fixed;
-    width: 100%;
-    z-index: 10;
-}
-
-.menu-hamburger {
     top: 0;
     width: 100%;
     background-color: #000000;
+}
+
+.menu-hamburger {
+    width: inherit;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -192,7 +190,6 @@ h2, .minu{
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-bottom: 5rem;
 }
 .imagens{
     display: flex;
@@ -244,12 +241,15 @@ div .legenda{
 
 /* Footer */
 footer {
+    position: relative;
     width: 100dvw;
     height: 70px;
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
+    bottom: 0;
+    top: 100%;
 }
 
 footer p{
