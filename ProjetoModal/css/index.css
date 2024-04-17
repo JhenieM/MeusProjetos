@@ -2,14 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap'); /*Texto no Modal*/
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /*Legenda, título, botões */
 
-html{
-    width: 100dvw;
+html {
+    scroll-behavior: smooth;
 }
+
+:target {
+    scroll-margin-top: 100px;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: rgb(124 59 124);
     overflow-x: hidden;
+    flex-direction: column;
 }
 
 a {
@@ -241,15 +247,12 @@ div .legenda{
 
 /* Footer */
 footer {
-    position: relative;
     width: 100dvw;
     height: 70px;
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    bottom: 0;
-    top: 100%;
 }
 
 footer p{
