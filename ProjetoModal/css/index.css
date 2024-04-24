@@ -118,9 +118,17 @@ input:checked ~ .menu-elements-hamburguer {
 
 
 /*Seção-01*/
+#musicas {
+    margin-top: 0px;
+}
+
 main {
-    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
+    position: relative;
+    top: -30px;
     min-height: 100vh;
 }
 
@@ -170,24 +178,28 @@ li a{
     letter-spacing: 3px;
 }
 
-/*H2*/
-h2, .minu{
+/*Título*/
+.text-title {
+    position: relative;
+    top: 30px;
     text-align: center;
-    font-size: 50px;
     font-family: 'Bebas Neue';
     margin-bottom: 10px;
 }
-.minu {
+
+h2{
+    font-size: 50px;
+    margin: 0;
+}
+
+.text-title p {
     font-size: 30px;
-    padding-top: 10px;
-    margin-top: -19px;
+    margin: 0;
 }
 
 /*imagem*/
 .corpo {
     display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
 }
 .imagens{
