@@ -2,20 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap'); /*Texto no Modal*/
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /*Legenda, título, botões */
 
-html {
-    scroll-behavior: smooth;
-}
-
-:target {
-    scroll-margin-top: 100px;
-}
 
 body {
     margin: 0;
     padding: 0;
     background-color: rgb(124 59 124);
     overflow-x: hidden;
-    flex-direction: column;
 }
 
 a {
@@ -29,7 +21,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
     top: 0;
     width: 100%;
     background-color: #000000;
@@ -129,6 +120,8 @@ input:checked ~ .menu-elements-hamburguer {
 /*Seção-01*/
 main {
     flex: 1;
+    position: relative;
+    min-height: 100vh;
 }
 
 ul {
@@ -247,15 +240,16 @@ div .legenda{
 
 /* Footer */
 footer {
+    bottom: 0;
     width: 100dvw;
-    height: 70px;
+    height: 4.5rem;
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-footer p{
+footer p {
     text-align: center;
     color: #fff;
     font-family: 'Oswald';
@@ -392,7 +386,6 @@ h1{
 @media screen and (min-width: 780px) and (max-width: 1270px) {
 
     header {
-        position: fixed;
         width: 100%;
         z-index: 999;
     }
@@ -414,7 +407,6 @@ h1{
 @media screen and (max-width: 780px) {
 
     header {
-        position: fixed;
         width: 100%;
         z-index: 999;
     }
@@ -437,7 +429,6 @@ h1{
 @media screen and (max-width: 600px){
 
     header {
-        position: fixed;
         width: 100%;
         z-index: 999;
     }
