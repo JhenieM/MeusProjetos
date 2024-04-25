@@ -22,8 +22,9 @@ header {
     align-items: center;
     justify-content: center;
     top: 0;
-    width: 100%;
+    width: 100vw;
     background-color: #000000;
+    z-index: 999;
 }
 
 .menu-hamburger {
@@ -118,18 +119,18 @@ input:checked ~ .menu-elements-hamburguer {
 
 
 /*Seção-01*/
-#musicas {
-    margin-top: 0px;
-}
-
 main {
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    position: relative;
-    top: -30px;
+    top: -55px;
     min-height: 100vh;
+}
+
+#musicas {
+    position: relative;
 }
 
 ul {
@@ -146,6 +147,7 @@ li {
 a {
 	color: #fff;
 	text-decoration: none;
+    z-index: 1;
 }
 
 
@@ -181,10 +183,9 @@ li a{
 /*Título*/
 .text-title {
     position: relative;
-    top: 30px;
     text-align: center;
     font-family: 'Bebas Neue';
-    margin-bottom: 10px;
+    margin: 50px;
 }
 
 h2{
@@ -199,8 +200,9 @@ h2{
 
 /*imagem*/
 .corpo {
-    display: flex;
-    position: relative;
+    justify-self: center;
+    align-items: center;
+    display: block;
 }
 .imagens{
     display: flex;
@@ -397,15 +399,6 @@ h1{
 
 @media screen and (min-width: 780px) and (max-width: 1270px) {
 
-    header {
-        width: 100%;
-        z-index: 999;
-    }
-
-    .corpo {
-        display: flex;
-        position: relative;
-    }
     .imagens {
         flex-flow: row wrap;
         justify-content: space-evenly;
@@ -414,19 +407,14 @@ h1{
         position: relative;
         margin-bottom: 30px;
     }
+    #musicas {
+        position: relative;
+        top: 50px;
+    }
 }
 
 @media screen and (max-width: 780px) {
 
-    header {
-        width: 100%;
-        z-index: 999;
-    }
-
-    .corpo {
-        display: flex;
-        position: relative;
-    }
     .imagens {
         flex-flow: column;
         margin: 20px;
@@ -435,15 +423,14 @@ h1{
         position: relative;
         margin-bottom: 30px;
     }
+    #musicas {
+        position: relative;
+        top: 50px;
+    }
 }
 
 /* ATIVANDO O BOTÃO HAMBURGUER QUANDO O TAMANHO DA TELA ATINGIR 600PX */
 @media screen and (max-width: 600px){
-
-    header {
-        width: 100%;
-        z-index: 999;
-    }
 
     .menu-hamburger{
         display: flex;
@@ -480,4 +467,8 @@ h1{
         width: 60px;
     }
 
+    #musicas {
+        position: relative;
+        top: 50px;
+    }
 }
