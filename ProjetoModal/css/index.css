@@ -365,13 +365,13 @@ h1{
     font-size: 16px;
     font-family: 'Oswald';
 }
-.um{
+ .um{
     position: absolute;
-    margin-top: -48px;
+    margin-top: -60px;
     margin-left: 325px;
     margin-right: 12px; 
     text-align: justify;
-}
+} 
 .dois{
     position: absolute;
     margin-left: 325px;
@@ -426,6 +426,21 @@ h1{
     #musicas {
         position: relative;
         top: 50px;
+    }
+
+    /* MODAL */
+
+    .box{
+        width: 600px;
+        height: 500px;
+        position:absolute;
+        overflow: scroll;
+    }
+    .img {
+        height: 360px;
+    }
+    .dois {
+        margin-top: 420px;
     }
 }
 
