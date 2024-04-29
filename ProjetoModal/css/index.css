@@ -293,7 +293,7 @@ footer p {
     opacity: 1;
     position:fixed;
 }
-.img{
+.img-modal {
     width: 300px;
     height: 300px;
     position: absolute;
@@ -301,7 +301,15 @@ footer p {
     border-radius: 10px;
     padding: 5px;
 }
-.box{
+.img-modal-lesserafim {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px;
+}
+.box {
     width: 755px;
     height: 500px;
     position:absolute;
@@ -371,7 +379,10 @@ h1{
     margin-left: 325px;
     margin-right: 12px; 
     text-align: justify;
-} 
+}
+#lesserafim, .um {
+    margin-left: 427px;
+}
 .dois{
     position: absolute;
     margin-left: 325px;
@@ -430,17 +441,40 @@ h1{
 
     /* MODAL */
 
-    .box{
+    .box {
         width: 600px;
         height: 500px;
-        position:absolute;
         overflow: scroll;
+        overflow-x: hidden;
     }
-    .img {
-        height: 360px;
+    .img-modal {
+        width: 100%;
+        object-fit: scale-down;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
     }
-    .dois {
-        margin-top: 420px;
+    .img-modal-lesserafim {
+        width: 100%;
+        object-fit: scale-down;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+    }
+    .texto-img {
+        position: absolute;
+        display: block;
+        margin: 20px;
+    }
+    .um, .dois, .tres {
+        margin: auto;
+        position: relative;
+
+    }
+    .texto {
+        font-size: 16px;
+        font-family: 'Oswald';
+        margin-top: -40px;
     }
 }
 
@@ -466,7 +500,7 @@ h1{
         top: 0;
         right: -315px;
 
-        transition:right cubic-bezier(1, 0, 0, 1) .8s;
+        transition: right cubic-bezier(1, 0, 0, 1) .8s;
 
         display: flex;
         align-items: center;
