@@ -337,7 +337,7 @@ h1{
     margin: 10px 20px;
     letter-spacing: 1.5px;
 }
-.close-l, .close-t, .close-b, .close-j{
+.close {
     position: absolute;
     text-decoration: none;
     color:white;
@@ -379,14 +379,12 @@ h1{
 }
 .dois{  
     position: absolute;
-    margin-left: 325px;
     text-align: justify;
-    margin-top: 170px;
-    margin-right: 12px;
+    margin: 170px 12px 0px 325px;
 }
 
-.dois-tukohtaka, .dois-lesserfaim {
-    margin-left: 10px;
+.dois-tukohtaka, .dois-lesserafim {
+    margin: 258px 15px 10px;
 }
 .tres{
     position: absolute;
@@ -444,6 +442,9 @@ h1{
         height: 500px;
         overflow: scroll;
         overflow-x: hidden;
+    }
+    .close {
+        right: 25px;
     }
     .img {
         width: 100%;
