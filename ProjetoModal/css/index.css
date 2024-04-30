@@ -164,7 +164,6 @@ li a:hover{
     color: rgb(124 59 124);
 }
 
-
 input {
     display: none;
 }
@@ -293,7 +292,7 @@ footer p {
     opacity: 1;
     position:fixed;
 }
-.img-modal {
+.img {
     width: 300px;
     height: 300px;
     position: absolute;
@@ -301,13 +300,9 @@ footer p {
     border-radius: 10px;
     padding: 5px;
 }
-.img-modal-lesserafim {
+ #img-modal-lesserafim, #img-modal-tukohtaka {
     width: 400px;
     height: 300px;
-    position: absolute;
-    margin: 10px;
-    border-radius: 10px;
-    padding: 5px;
 }
 .box {
     width: 755px;
@@ -357,11 +352,9 @@ h1{
 }
 .close-l:hover{
     color: rgb(00, 00, 00);
-
 }
 .close-t:hover{
     color: rgb(255, 0, 0);
-
 }
 .close-b:hover{
     color:rgb(125 0 1);
@@ -370,25 +363,30 @@ h1{
     color:rgb(176 146 118);
 }
 .texto{
-    font-size: 16px;
+    font-size: 17px;
     font-family: 'Oswald';
 }
- .um{
+.um {
     position: absolute;
     margin-top: -60px;
     margin-left: 325px;
     margin-right: 12px; 
     text-align: justify;
+   
 }
-#lesserafim, .um {
+.um-tokohtaka, .um-lesserafim {
     margin-left: 427px;
 }
-.dois{
+.dois{  
     position: absolute;
     margin-left: 325px;
     text-align: justify;
     margin-top: 170px;
     margin-right: 12px;
+}
+
+.dois-tukohtaka, .dois-lesserfaim {
+    margin-left: 10px;
 }
 .tres{
     position: absolute;
@@ -447,14 +445,14 @@ h1{
         overflow: scroll;
         overflow-x: hidden;
     }
-    .img-modal {
+    .img {
         width: 100%;
         object-fit: scale-down;
         margin: 0px;
         padding: 0px;
         position: relative;
     }
-    .img-modal-lesserafim {
+    #img-modal-lesserafim, #img-modal-tukohtaka {
         width: 100%;
         object-fit: scale-down;
         margin: 0px;
