@@ -15,6 +15,21 @@
     height: 500px;
     border: 1px solid black;
 }
-.clima {
-    display: contents;
+.search {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px 70px;
+}
+.bi {
+    cursor: pointer;
+    font-size: 20.5px;
+}
+.input-costum {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 0px 10px;
+    width: 350px;
+    height: 35px;
+    margin: 0px 10px;
 }

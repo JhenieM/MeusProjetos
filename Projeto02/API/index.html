@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="CSS/index.css">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet">
         <title>Clima</title>
     </head>
     <body>
@@ -10,8 +12,14 @@
             <div class="container-clima-main">
                 <div class="container-clima">
                     <div class="clima">
-                        <i class="far fa-search"></i>
-                        <input type="text">
+                        <div class="search">
+                            <input class="input-costum" type="text" />
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <div class="content">
+                            <!-- http://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key} -->
+                            <p id="weather"></p>
+                        </div>
                     </div>
                 </div>
             </div>
