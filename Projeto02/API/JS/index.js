@@ -5,20 +5,34 @@ const api_key = "fe5fcd19310a3bf389ede816e310cbeb";
 
 function submit() {
     var city = document.getElementById("city").value;
+    var content = document.getElementById("weather");
 
+    const params = new URLSearchParams({
+        q: city,
+        appid: api_key,
+        units: "metric"
+    }).toString();
 
-const params = new URLSearchParams({
-    q: city,
-    appid: api_key,
-    units: "metric"
-});
+    console.log (`${api_url}?${params}`);
 
-console.log (`${api_url}?${params}`);
+    fetch(`${api_url}?${params}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao buscar dados da API');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // console.log('Dados recebidos:', data);
+        if (data.main) {
+            content.innerHTML = `Temperatura: ${data.main.temp}°C, Umidade: ${data.main.humidity}%`;
+        } else {
+            content.innerHTML = 'Dados não disponíveis';
+            console.error('Estrutura dos dados inesperada:', data);
+        }
+    })
+    .catch(error => {
+        content.innerHTML = `Erro: ${error.message}`;
+    });
 
-fetch (`${api_url}?${params}`)
-    .then (function (reponse) {
-        
-   })
-    .then ()
 }
-
