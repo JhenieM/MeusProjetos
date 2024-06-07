@@ -6,6 +6,7 @@ const api_key = "fe5fcd19310a3bf389ede816e310cbeb";
 function submit() {
     var city = document.getElementById("city").value;
     var content = document.getElementById("weather");
+    var img = document.getElementById("img-weather");
 
     const params = new URLSearchParams({
         q: city,
@@ -25,7 +26,7 @@ function submit() {
     .then(data => {
         // console.log('Dados recebidos:', data);
         if (data.main) {
-            content.innerHTML = `Temperatura: ${data.main.temp}°C, Umidade: ${data.main.humidity}%`;
+            content.innerHTML = `Temperatura: ${data.main.temp}°C<br/>Umidade: ${data.main.humidity}%`;
         } else {
             content.innerHTML = 'Dados não disponíveis';
             console.error('Estrutura dos dados inesperada:', data);
