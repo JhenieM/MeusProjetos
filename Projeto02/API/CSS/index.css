@@ -33,6 +33,12 @@
     height: 35px;
     margin: 0px 10px;
 }
-.content p {
+.content {
+    position: relative;
+    display: grid;
+    place-items: center;
+    top: 40px;
+}
+.content span {
     text-align: center;
 }
