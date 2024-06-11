@@ -1,15 +1,16 @@
 const api_url = "http:api.openweathermap.org/data/2.5/weather";
 const api_key = "fe5fcd19310a3bf389ede816e310cbeb";
 
-// http:api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+// ESTRUTURA DAS URLs
+// http:api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key} - WEATHER
+// http://openweathermap.org/img/wn/${icone}@2x.png - ICON
 
 function submit() {
-    var city = document.getElementById("city").value;
-    var content = document.getElementById("weather");
-    var srcImg = "IMG/sol_nuvens.png";
+    const place = document.getElementById("place").value;
+    const content = document.getElementById("weather");
 
     const params = new URLSearchParams({
-        q: city,
+        q: place,
         appid: api_key,
         units: "metric"
     }).toString();
@@ -26,8 +27,12 @@ function submit() {
     .then(data => {
         // console.log('Dados recebidos:', data);
         if (data.main) {
-            content.innerHTML = `Temperatura: ${Math.round(data.main.temp)}°C<br/>Umidade: ${data.main.humidity}%`;
-            document.getElementById("imageoption").src = srcImg;
+            const icone = data.weather[0].icon;
+            const iconUrl = `http://openweathermap.org/img/wn/${icone}@2x.png`;
+            const weatherIcon = document.getElementById('img');
+            weatherIcon.src = iconUrl;
+            weatherIcon.style.display = 'block';
+            content.innerHTML = `Temperatura: ${Math.round(data.main.temp)}°C<br/>Umidade: ${data.main.humidity}%<br/>Vento: ${Math.round(data.wind.speed)}km/h`;
         } else {
             content.innerHTML = 'Dados não disponíveis';
             console.error('Estrutura dos dados inesperada:', data);
@@ -38,3 +43,9 @@ function submit() {
     });
 
 }
+
+document.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+      submit();
+    }
+});
