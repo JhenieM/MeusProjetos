@@ -7,7 +7,7 @@ const api_key = "fe5fcd19310a3bf389ede816e310cbeb";
 
 function submit() {
     const place = document.getElementById("place").value;
-    const content = document.getElementById("weather");
+    // const content = document.getElementById("weather");
 
     const params = new URLSearchParams({
         q: place,
@@ -30,9 +30,17 @@ function submit() {
             const icone = data.weather[0].icon;
             const iconUrl = `http://openweathermap.org/img/wn/${icone}@2x.png`;
             const weatherIcon = document.getElementById('img');
+            const temperature = document.getElementById('temp');           
+            const humidity = document.getElementById('hum');
+            const winer = document.getElementById('winer');
+
             weatherIcon.src = iconUrl;
             weatherIcon.style.display = 'block';
-            content.innerHTML = `Temperatura: ${Math.round(data.main.temp)}°C<br/>Umidade: ${data.main.humidity}%<br/>Vento: ${Math.round(data.wind.speed)}km/h`;
+
+            temperature.innerHTML = `${Math.round(data.main.temp)}°C`;
+            humidity.innerText = `Umidade: ${data.main.humidity}%`;
+            winer.innerText = `Vento: ${Math.round(data.wind.speed)}km/h`;
+
         } else {
             content.innerHTML = 'Dados não disponíveis';
             console.error('Estrutura dos dados inesperada:', data);

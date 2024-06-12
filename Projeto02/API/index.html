@@ -10,17 +10,20 @@
     <body>
         <main>
             <div class="container-clima-main">
-                <div class="container-clima">
-                    <div class="clima">
+                <div class="clima">
+                    <div class="container-clima">
                         <div class="search">
                             <input class="input-costum" type="text" id="place"/>
                             <i class="bi bi-search" onclick="submit()" id="submit"></i>
                         </div>
                         <div class="content">
+                            <div class="temp-img">
+                            <span class="weather-temp" id="temp"></span>
                             <img  class="img-clima" id="img" src="" style="display: none;"/>
-                            <span id="weather">Loading...</span>
-                            
-                            <!-- <span class="img" id="img-weather"></span> -->
+                            </div>
+                            <div></div>
+                            <span class="weather-hum" id="hum"></span>
+                            <span class="weather-winer" id="winer"></span>
                         </div>
                     </div>
                 </div>
