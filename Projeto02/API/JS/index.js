@@ -7,7 +7,8 @@ const api_key = "fe5fcd19310a3bf389ede816e310cbeb";
 
 function submit() {
     const place = document.getElementById("place").value;
-    // const content = document.getElementById("weather");
+    const content = document.getElementById("weather-error");
+    content.style.display = 'none';
 
     const params = new URLSearchParams({
         q: place,
@@ -27,14 +28,22 @@ function submit() {
     .then(data => {
         // console.log('Dados recebidos:', data);
         if (data.main) {
+            const icon_img= "";
             const icone = data.weather[0].icon;
-            const iconUrl = `http://openweathermap.org/img/wn/${icone}@2x.png`;
+            switch (icone) {
+                case "01d":
+                    icon_img = `http://openweathermap.org/img/wn/${icone}@2x.png`;
+                    break;
+                default:
+                    break;
+            }
+            // const iconUrl = `http://openweathermap.org/img/wn/${icone}@2x.png`;
             const weatherIcon = document.getElementById('img');
             const temperature = document.getElementById('temp');           
             const humidity = document.getElementById('hum');
             const winer = document.getElementById('winer');
 
-            weatherIcon.src = iconUrl;
+            weatherIcon.src = icon_img;
             weatherIcon.style.display = 'block';
 
             temperature.innerHTML = `${Math.round(data.main.temp)}°C`;
@@ -48,6 +57,7 @@ function submit() {
     })
     .catch(error => {
         content.innerHTML = `Erro: ${error.message}`;
+        content.style.display = 'block';
     });
 
 }
