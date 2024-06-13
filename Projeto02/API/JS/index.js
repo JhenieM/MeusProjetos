@@ -28,12 +28,14 @@ function submit() {
     .then(data => {
         // console.log('Dados recebidos:', data);
         if (data.main) {
-            const icon_img= "";
-            const icone = data.weather[0].icon;
+            // const icon_img = "";
+            let icone = data.weather[0].icon;
             switch (icone) {
                 case "01d":
-                    icon_img = `http://openweathermap.org/img/wn/${icone}@2x.png`;
+                    icone = "./IMG/sol.png";
                     break;
+                case "01n":
+                    icone = "./IMG/lua.png";
                 default:
                     break;
             }
@@ -43,7 +45,7 @@ function submit() {
             const humidity = document.getElementById('hum');
             const winer = document.getElementById('winer');
 
-            weatherIcon.src = icon_img;
+            weatherIcon.src = icone;
             weatherIcon.style.display = 'block';
 
             temperature.innerHTML = `${Math.round(data.main.temp)}°C`;
@@ -51,12 +53,16 @@ function submit() {
             winer.innerText = `Vento: ${Math.round(data.wind.speed)}km/h`;
 
         } else {
-            content.innerHTML = 'Dados não disponíveis';
-            console.error('Estrutura dos dados inesperada:', data);
+            const content = document.getElementById('content');
+          content.innerHTML = 'Dados não disponíveis';
+          console.error('Estrutura dos dados inesperada:', data);
         }
     })
     .catch(error => {
-        content.innerHTML = `Erro: ${error.message}`;
+        document.getElementById('temp').textContent = 'Erro ao carregar temperatura.';
+        document.getElementById('hum').textContent = 'Erro ao carregar umidade.';
+        document.getElementById('winer').textContent = 'Erro ao carregar velocidade do vento.';
+        console.error('Erro:', error);
         content.style.display = 'block';
     });
 
