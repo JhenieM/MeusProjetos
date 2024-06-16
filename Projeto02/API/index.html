@@ -12,20 +12,25 @@
             <div class="container-clima-main">
                 <div class="clima">
                     <div class="container-clima">
-                        
                         <div class="search">
-                            <input class="input-costum" type="text" id="place"/>
+                            <input class="input-costum" type="text" id="place" placeholder="Placeholder Text"/>
                             <i class="bi bi-search" onclick="submit()" id="submit"></i>
                         </div>
                         <div class="content">
                             <span id="weather-error" style="display: none;"></span>
-                            <div class="temp-img">
+                            <div class="temp-img" id="temp-img">
                                 <span class="weather-temp" id="temp"></span>
                                 <img  class="img-clima" id="img" src="" style="display: none;"/>
                             </div>
                             <div class="content-text">
-                                <span class="weather-hum" id="hum"></span>
-                                <span class="weather-winer" id="winer"></span>
+                                <div class="hum-block">
+                                    <span class="weather-hum" id="hum"></span>
+                                    <img src="./IMG/humidity.png" alt="" style="width: 60px; display: none;" id="img-hum">
+                                </div>
+                                <div class="win-block">
+                                    <span class="weather-winer" id="winer"></span>
+                                    <img src="./IMG/windy.svg" alt="" style="width: 60px; display: none;" id="img-win">
+                                </div>
                             </div>
                         </div>
                     </div>
