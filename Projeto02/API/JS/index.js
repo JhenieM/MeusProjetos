@@ -2,6 +2,7 @@ const api_url = "http:api.openweathermap.org/data/2.5/weather";
 const api_key = "fe5fcd19310a3bf389ede816e310cbeb";
 const error = document.querySelector('.error');
 const content = document.querySelector('.content');
+const img_error = document.getElementById('img-error');
 
 // ESTRUTURA DAS URLs
 // http:api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key} - WEATHER
@@ -23,9 +24,16 @@ function submit() {
     fetch(`${api_url}?${params}`)
     .then(response => {
         if (response.status === 404) {
+            // img_error.src = "./IMG/not-found.png";
+            // errorText.innerHTML = `Erro na Localização :/`;
+            // error.style.display = '';
+            // content.style.display = 'none';
+            // throw new Error('404');
+
             error.style.display = '';
             content.style.display = 'none';
-            throw new Error('404');
+            img_error.src = "./IMG/error.png";
+            errorText.innerHTML = `Ocorreu um erro: ${error}`;
         }
         return response.json();
     })
@@ -108,8 +116,9 @@ function submit() {
     })
     .catch(error => {
         if (error.message !== '404') {
-            error.style.display = 'block';
-            console.error('Ocorreu um erro:', error);
+            // img_error.src = "./IMG/error.png";
+            // errorText.innerHTML = `Ocorreu um erro: ${error}`;
+            // error.style.display = '';
         }
     });
 }
