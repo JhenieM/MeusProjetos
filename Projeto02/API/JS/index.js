@@ -1,17 +1,16 @@
 const api_url = "http:api.openweathermap.org/data/2.5/weather";
 const api_key = "fe5fcd19310a3bf389ede816e310cbeb";
-const error = document.querySelector('.error');
+
+const errorBox = document.querySelector('.error');
 const content = document.querySelector('.content');
 const img_error = document.getElementById('img-error');
-
+    
 // ESTRUTURA DAS URLs
 // http:api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key} - WEATHER
 // http://openweathermap.org/img/wn/${icone}@2x.png - ICON
 
 function submit() {
     const place = document.getElementById("place").value;
-    // const content = document.getElementById("weather-error");
-    // content.style.display = 'none';
 
     const params = new URLSearchParams({
         q: place,
@@ -19,33 +18,27 @@ function submit() {
         units: "metric"
     }).toString();
 
-    console.log (`${api_url}?${params}`);
+    // console.log (`${api_url}?${params}`);
 
     fetch(`${api_url}?${params}`)
     .then(response => {
         if (response.status === 404) {
-            // img_error.src = "./IMG/not-found.png";
-            // errorText.innerHTML = `Erro na Localização :/`;
-            // error.style.display = '';
-            // content.style.display = 'none';
-            // throw new Error('404');
-
-            error.style.display = '';
+            img_error.src = "./IMG/not-found.png";
+            errorText.innerHTML = `Erro na Localização :/`;
+            errorBox.style.display = 'block';
             content.style.display = 'none';
-            img_error.src = "./IMG/error.png";
-            errorText.innerHTML = `Ocorreu um erro: ${error}`;
+            throw new Error('404');
         }
         return response.json();
     })
     .then(data => {
-
-        error.style.display = 'none';
+        errorBox.style.display = 'none';
         content.style.display = '';
         document.getElementById('temp-img').style.fontSize = '80px';
+        let icone = "";
         // console.log('Dados recebidos:', data);
         
-            let icone = data.weather[0].icon;
-            switch (icone) {
+            switch (data.weather[0].icon) {
                 case "01d":
                     icone = "./IMG/clear_day.svg";
                     break;
@@ -116,9 +109,12 @@ function submit() {
     })
     .catch(error => {
         if (error.message !== '404') {
-            // img_error.src = "./IMG/error.png";
-            // errorText.innerHTML = `Ocorreu um erro: ${error}`;
-            // error.style.display = '';
+            img_error.src = "./IMG/error.png";
+            img_error.style.width = "80%";
+            img_error.style.marginBottom = "20px";
+            errorText.innerHTML = `Ocorreu um erro :/`;
+            errorBox.style.display = 'block';
+            content.style.display = 'none';
         }
     });
 }
