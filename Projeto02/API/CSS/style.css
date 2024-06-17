@@ -1,0 +1,139 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#06283D;
+    overflow: hidden;
+    font-family: 'oswald';
+}
+.container-clima {
+    width: 350px;
+    height: 500px;
+    padding: 15px 10px;
+    box-shadow: rgb(12 12 12) 0px 5px 20px;
+    border-radius: 10px;
+    background-color: #1e3577;
+}
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.search button {
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-size: 20.5px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #4b63a5;
+    display: grid;
+    place-items: center;
+}
+.search i {
+    color: #ffffff;
+    font-size: 28px;
+}
+.search input {
+    border: 1px solid transparent;
+    border-radius: 15px;
+    padding: 0px 10px;
+    width: 200px;
+    height: 35px;
+    margin: 0px 10px;
+    font-size: 15px;
+	outline: none;
+	background: #FFFFFF;
+	color: #000000;
+	transition: .3s ease;
+}
+.search input::placeholder {
+	color: #8f8e8e;
+}
+/* .search input:focus {
+
+} */
+.content {
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    top: 20px;
+}
+.content span {
+    text-align: center;
+    color: white;
+}
+span, input {
+    text-transform: uppercase;
+}
+.span-city {
+    position: relative;
+    top: 40px;
+    font-size: 30px;
+    display: flex;
+}
+.temp-img {
+    position: relative;
+    top: 35px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.content-text {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.win-block, .hum-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#hum-icon, #win-icon {
+    font-size: 30px;
+}
+#weather {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.img-clima {
+    width: 100px;
+}
+
+.error {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    display: block;
+}
+
+.error img{
+    width: 100%;
+}
+
+.error p{
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 12px;
+}

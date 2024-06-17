@@ -1,5 +1,7 @@
 const api_url = "http:api.openweathermap.org/data/2.5/weather";
 const api_key = "fe5fcd19310a3bf389ede816e310cbeb";
+const error = document.querySelector('.error');
+const content = document.querySelector('.content');
 
 // ESTRUTURA DAS URLs
 // http:api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key} - WEATHER
@@ -7,8 +9,8 @@ const api_key = "fe5fcd19310a3bf389ede816e310cbeb";
 
 function submit() {
     const place = document.getElementById("place").value;
-    const content = document.getElementById("weather-error");
-    content.style.display = 'none';
+    // const content = document.getElementById("weather-error");
+    // content.style.display = 'none';
 
     const params = new URLSearchParams({
         q: place,
@@ -20,15 +22,20 @@ function submit() {
 
     fetch(`${api_url}?${params}`)
     .then(response => {
-        if (!response.ok) {
-            throw new Error('Erro ao buscar dados da API');
+        if (response.status === 404) {
+            error.style.display = '';
+            content.style.display = 'none';
+            throw new Error('404');
         }
         return response.json();
     })
     .then(data => {
+
+        error.style.display = 'none';
+        content.style.display = '';
         document.getElementById('temp-img').style.fontSize = '80px';
         // console.log('Dados recebidos:', data);
-        if (data.main) {
+        
             let icone = data.weather[0].icon;
             switch (icone) {
                 case "01d":
@@ -83,36 +90,28 @@ function submit() {
             }
             // const iconUrl = `http://openweathermap.org/img/wn/${icone}@2x.png`;
             const weatherIcon = document.getElementById('img');
-            const windyIcon = document.getElementById('img-win');
-            const humIcon = document.getElementById('img-hum');
+            const windyIcon = document.getElementById('win-icon');
+            const humIcon = document.getElementById('hum-icon');
             const temperature = document.getElementById('temp');           
             const humidity = document.getElementById('hum');
             const winer = document.getElementById('winer');
 
             weatherIcon.src = icone;
-            weatherIcon.style.display = 'block';
-            windyIcon.style.display = 'block';
-            humIcon.style.display = 'block';
+            weatherIcon.style.display = '';
+            windyIcon.style.display = '';
+            humIcon.style.display = '';
 
+            city.innerHTML = `${data.name}`;
             temperature.innerHTML = `${Math.round(data.main.temp)}°C`;
-            humidity.innerText = `Umidade: ${data.main.humidity}%`;
-            winer.innerText = `Vento: ${Math.round(data.wind.speed)}km/h`;
-
-        } else {
-            const content = document.getElementById('content');
-            content.innerHTML = 'Dados não disponíveis';
-            console.error('Estrutura dos dados inesperada:', data);
-        }
+            humidity.innerText = `${data.main.humidity}%`;
+            winer.innerText = `${Math.round(data.wind.speed)}km/h`;
     })
     .catch(error => {
-        document.getElementById('temp').textContent = 'Erro ao carregar temperatura.';
-        document.getElementById('hum').textContent = 'Erro ao carregar umidade.';
-        document.getElementById('winer').textContent = 'Erro ao carregar velocidade do vento.';
-        console.error('Erro:', error);
-        document.getElementById('temp-img').style.fontSize = '30px';
-        content.style.display = 'block';
+        if (error.message !== '404') {
+            error.style.display = 'block';
+            console.error('Ocorreu um erro:', error);
+        }
     });
-
 }
 
 document.addEventListener('keypress', function(event) {

@@ -2,34 +2,44 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="CSS/index.css">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet">
-        <title>Clima</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>Weather</title>
     </head>
     <body>
         <main>
             <div class="container-clima-main">
                 <div class="clima">
                     <div class="container-clima">
+
                         <div class="search">
-                            <input class="input-costum" type="text" id="place" placeholder="Placeholder Text"/>
-                            <i class="bi bi-search" onclick="submit()" id="submit"></i>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input class="input-costum" type="text" id="place" placeholder="Enter Your Location"/>  
+                            <button class="fa-solid fa-magnifying-glass" onclick="submit()" id="submit"></button>
                         </div>
+
+                        <div class="error" style="display: none;">
+                            <img src="./IMG/not-found.png" alt="">
+                            <p>Erro na localização :/</p>
+                        </div>
+
                         <div class="content">
-                            <span id="weather-error" style="display: none;"></span>
                             <div class="temp-img" id="temp-img">
+                                <img class="img-clima" id="img" src="" style="display: none;"/>
                                 <span class="weather-temp" id="temp"></span>
-                                <img  class="img-clima" id="img" src="" style="display: none;"/>
                             </div>
+
+                            <span class="span-city" id="city"></span>
+
                             <div class="content-text">
                                 <div class="hum-block">
+                                    <i class="fa-solid fa-water" id="hum-icon" style="display: none;"></i>
                                     <span class="weather-hum" id="hum"></span>
-                                    <img src="./IMG/humidity.png" alt="" style="width: 60px; display: none;" id="img-hum">
                                 </div>
+
                                 <div class="win-block">
+                                    <i class="fa-solid fa-wind" id="win-icon" style="display: none;"></i>
                                     <span class="weather-winer" id="winer"></span>
-                                    <img src="./IMG/windy.svg" alt="" style="width: 60px; display: none;" id="img-win">
                                 </div>
                             </div>
                         </div>
