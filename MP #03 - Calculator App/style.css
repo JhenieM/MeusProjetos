@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0;
+}
+
+html{
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body{
+    background-color: rgb(141, 84, 141);
+    align-items: center;
+    display: flex;
+    font-family:'Titillium Web';
+    font-weight: bold;
+    font-display: swap;
+    height: inherit;
+    justify-content: center;
+}
+
+.box-main{
+    background-color: beige;
+    height: 457px;
+    text-align: center;
+    width: 350px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.box-screen{
+    background-color:#fff;
+    border-radius: 8px;
+    font-weight: 60px;
+    font-size: 50px;
+    overflow: hidden;
+    text-align: right;
+    padding-right: 15px;
+    margin-bottom: 5px;
+}
+
+.box-buttons{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+.button-calc{
+    border-radius: 10px;
+    font-size: 35px;
+    width: 80px;
+    margin: 10px 0px;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.clear{
+    width: 150px;
+    background-color: rgb(92, 69, 129);
+}
+.next{
+    width: 95px;
+}
+.zero{
+    width: 200px;
+}
+.equals{
+    width: 140px;
+}
+
+button{
+    cursor: pointer;
+}
+
+.symbol{
+    background-color: rgb(0, 0, 0);
+    color: #fff
+}
