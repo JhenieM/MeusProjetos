@@ -24,6 +24,7 @@ function submit() {
     .then(response => {
         if (response.status === 404) {
             img_error.src = "./IMG/not-found.png";
+            img_error.style.width = "100%";
             errorText.innerHTML = `Erro na Localização :/`;
             errorBox.style.display = 'block';
             content.style.display = 'none';
@@ -110,9 +111,8 @@ function submit() {
     .catch(error => {
         if (error.message !== '404') {
             img_error.src = "./IMG/error.png";
-            img_error.style.width = "80%";
-            img_error.style.marginBottom = "20px";
-            errorText.innerHTML = `Ocorreu um erro :/`;
+            img_error.style.width = "70%";
+            errorText.innerHTML = `</br>Ocorreu um erro :/`;
             errorBox.style.display = 'block';
             content.style.display = 'none';
         }

@@ -127,10 +127,6 @@ span, input {
     display: block;
 }
 
-.error img{
-    width: 100%;
-}
-
 .error span{
     color: #ffffff;
     font-size: 20px;

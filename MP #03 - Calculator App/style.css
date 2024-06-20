@@ -69,12 +69,10 @@ body{
 .equals{
     width: 140px;
 }
-
-button{
-    cursor: pointer;
-}
-
 .symbol{
     background-color: rgb(0, 0, 0);
     color: #fff
+}
+button{
+    cursor: pointer;
 }
