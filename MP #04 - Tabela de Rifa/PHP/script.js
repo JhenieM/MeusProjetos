@@ -18,7 +18,7 @@ function submit() {
 
     let elementoAtual = 1;
 
-    capitation.textContent = `${numElementos}`;
+    // capitation.textContent = `${numElementos}`;
     for (let i = 0; i < numLinhas; i++) {
       const linha = document.createElement('tr');
 

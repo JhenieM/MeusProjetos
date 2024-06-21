@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
     <title>Tabela</title>
-    <script src="./PHP/script.js"></script>
+    <!-- <script src="./PHP/script.js" defer></script> -->
 </head>
 <body>
     <div class="box-main">
         <div class="box-screen">
             <div class="screen-input">
-                <input type="number" placeholder="Quantidade de números" id="quantidade"/>
-                <button class="button-g" onclick="submit()">Gerar Tabela</button>
+                <form action="" method="POST">
+                    <input type="number" placeholder="Quantidade de números" id="qualidade" name="quantidade" required/>
+                    <button type="submit" class="button-g">Gerar Tabela</button>
+                </form>
             </div>
-            <div id="tabela"></div>
+            <div id="tabela">
+                <?php
+                    include './PHP/logic.php';
+                ?>
+            </div>
         </div>
     </div>
 </body>
