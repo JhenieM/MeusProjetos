@@ -7,22 +7,29 @@
     display: grid;
     place-items: center;
     height: 100dvh;
+    padding: 20px;
 }
 .box {
     display: flex;
+    gap: 20px;
 }
 .traduzir-box, .tradutor-box {
     width: 650px;
     height: 300px;
     background-color: antiquewhite;
     margin: 20px;
-    padding: 20px;
-    font-size: 30px;
     border: 1px solid black;
 }
 textarea {
-    width: inherit;
     resize: none;
+    width: calc(100% - 40px);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 20px;
+    font-size: 30px;
+    overflow: hidden;
+    height: auto;
 }
 .button-translate {
     width: auto;
@@ -33,5 +40,6 @@ textarea {
     border-radius: 5px;
     font-size: 20px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
