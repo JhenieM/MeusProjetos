@@ -13,20 +13,19 @@
     display: flex;
     gap: 20px;
 }
-.traduzir-box, .tradutor-box {
-    width: 650px;
-    height: 300px;
-    background-color: antiquewhite;
-    margin: 20px;
+.traduzir-box, .tradutor-box{
+    width: 520px;
+    height: auto;
     border: 1px solid black;
 }
 textarea {
+    position: relative;
     resize: none;
     width: calc(100% - 40px);
     background-color: transparent;
     outline: none;
     border: none;
-    padding: 20px;
+    padding: 20px 10px;
     font-size: 30px;
     overflow: hidden;
     height: auto;
@@ -42,4 +41,9 @@ textarea {
     text-transform: uppercase;
     cursor: pointer;
 }
-
+.box-insider {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+}
