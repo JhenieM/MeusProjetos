@@ -41,7 +41,7 @@ textarea {
     text-transform: uppercase;
     cursor: pointer;
 }
-.box-insider {
+#text {
     position: relative;
     left: 0;
     right: 0;
