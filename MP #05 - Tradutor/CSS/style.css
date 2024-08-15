@@ -7,7 +7,6 @@
     display: grid;
     place-items: center;
     height: 100dvh;
-    padding: 20px;
 }
 .box {
     display: flex;
@@ -18,10 +17,13 @@
     height: auto;
     border: 1px solid black;
 }
+.box-insider {
+    height: auto;
+}
 textarea {
     position: relative;
     resize: none;
-    width: calc(100% - 40px);
+    width: calc(100% - 55px);
     background-color: transparent;
     outline: none;
     border: none;
@@ -46,4 +48,9 @@ textarea {
     left: 0;
     right: 0;
     top: 0;
+}
+.box-bottom {
+    padding: 0px 10px 5px;
+    font-size: 11pt;
+    text-align: end;
 }
