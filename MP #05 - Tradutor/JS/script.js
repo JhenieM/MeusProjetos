@@ -1,16 +1,24 @@
  //* TexteArea responsivo */
 
-const textarea = document.getElementById('text');
+var textArea = document.getElementById('text-area');
+var textDiv = document.getElementById('tradutorBox');
 
-const adjustHeight = () => {
-    textarea.style.height = 'auto';
-    textarea.style.height = `${textarea.scrollHeight}px`;
+const tamanhoTraduzir = () => {
+    textArea.style.height = 'auto';
+    textArea.style.height = `${textArea.scrollHeight}px`;
+};
+const tamanhoTradutor = () => {
+    textDiv.style.height = 'auto';
+    textDiv.style.height = `${textDiv.scrollHeight}px`;
 };
 
-textarea.addEventListener('input', adjustHeight);
-adjustHeight();
+textArea.addEventListener('input', tamanhoTraduzir);
+tamanhoTraduzir();
 
-/* Tradutor em tempo real */
+textDiv.addEventListener('input', tamanhoTradutor);
+tamanhoTradutor();
+
+/* Tradutor em tempo real 
 
 //const fetch = require('./node_modules');
 
@@ -40,13 +48,12 @@ fetch(url, {
 
 .then(data => console.log(data.translatedText))
 .catch(error => console.error('Error:', error));
+*/
 
 /* Passar texto para outro bloco */
-const traduzidoBox = getElementById('tradutorBox');
-
-const passaTexto = () => {
-   traduzidoBox.innnerHTML(textarea); 
+ 
+ function updateText() {
+    textDiv.textContent = textArea.value;
 }
 
-traduxorBox = addEventListener('input', passaTexto);
-passaTexto();
+document.getElementById('text-area').addEventListener('input', updateText);

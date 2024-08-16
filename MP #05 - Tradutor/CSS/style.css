@@ -17,10 +17,10 @@
     height: auto;
     border: 1px solid black;
 }
-.box-insider {
+.traduzir-box-insider, .tradutor-box-insider {
     height: auto;
 }
-textarea {
+textarea, #tradutorBox {
     position: relative;
     resize: none;
     width: calc(100% - 55px);
@@ -43,7 +43,7 @@ textarea {
     text-transform: uppercase;
     cursor: pointer;
 }
-#text {
+#text-area, #tradutorBox {
     position: relative;
     left: 0;
     right: 0;
