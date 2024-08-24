@@ -1,5 +1,4 @@
- //* TexteArea responsivo */
-
+//* TexteArea responsivo */
 var textArea = document.getElementById('text-area');
 var textDiv = document.getElementById('tradutorBox');
 
@@ -18,14 +17,19 @@ tamanhoTraduzir();
 textDiv.addEventListener('input', tamanhoTradutor);
 tamanhoTradutor();
 
-/* Tradutor em tempo real 
+/* Passar texto para outro bloco */
+ function updateText() {
+    return update = textDiv.textContent = textArea.value;
+}
 
-//const fetch = require('./node_modules');
+document.getElementById('text-area').addEventListener('input', updateText);
+
+/* Tradutor em tempo real */
 
 const url = "https://libretranslate.com/translate";
 
 const data = {
-    q: "Olá, como você está?",
+    q: updateText(),
     source: "pt",
     target: "en"
 };
@@ -48,12 +52,5 @@ fetch(url, {
 
 .then(data => console.log(data.translatedText))
 .catch(error => console.error('Error:', error));
-*/
 
-/* Passar texto para outro bloco */
- 
- function updateText() {
-    textDiv.textContent = textArea.value;
-}
 
-document.getElementById('text-area').addEventListener('input', updateText);
