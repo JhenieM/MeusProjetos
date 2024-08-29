@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="IMG/icon-traduzir-pae.png">
+    <title>Translate App</title>
+    <script src="SCRIPT/index.js"></script>
+    <script src="SCRIPT/countries.js"></script>
+</head>
+<body>
+    <div class="container-box">
+        <div class="all-box">
+            
+            <div class="box">
+                <div class="traduzir-box">
+                    <span><select></select></span>
+                    <div class="traduzir-box-insider">
+                        <textarea id="text-area" maxlength="5000"></textarea>
+                    </div>
+                    <div class="box-bottom">
+                        <span>0/600</span>
+                    </div>
+                </div>
+
+                <div class="tradutor-box">
+                    <span><select></select></span>
+                    <div class="tradutor-box-insider">
+                        <span id="tradutorBox"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-box" id="button">
+                <button onclick="submit()" class="button-translate">Translate</button>
+            </div>
+        </div>
+    </div> 
+
+
+
+</body>
+</html>
