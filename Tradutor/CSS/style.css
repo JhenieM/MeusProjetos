@@ -8,9 +8,13 @@
     place-items: center;
     height: 100dvh;
 }
+.all-box {
+    margin: 20px;
+}
 .box {
     display: flex;
     gap: 20px;
+    margin: 10px 0px;
 }
 .traduzir-box, .tradutor-box{
     width: 520px;
