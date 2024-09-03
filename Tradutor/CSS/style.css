@@ -10,6 +10,8 @@
 }
 .all-box {
     margin: 20px;
+    display: grid;
+    place-items: center;
 }
 .box {
     display: flex;
@@ -24,7 +26,7 @@
 .traduzir-box-insider, .tradutor-box-insider {
     height: auto;
 }
-textarea, #tradutorBox {
+textarea, .tradutorBox{
     position: relative;
     resize: none;
     width: calc(100% - 55px);
@@ -37,7 +39,7 @@ textarea, #tradutorBox {
     height: auto;
 }
 .button-translate {
-    width: auto;
+    width: 570px;
     padding: 7px 15px;
     background-color: rgb(46, 46, 149);
     border: none;
@@ -47,7 +49,7 @@ textarea, #tradutorBox {
     text-transform: uppercase;
     cursor: pointer;
 }
-#text-area, #tradutorBox {
+.text-area, .tradutorBox {
     position: relative;
     left: 0;
     right: 0;
@@ -57,4 +59,12 @@ textarea, #tradutorBox {
     padding: 0px 10px 5px;
     font-size: 11pt;
     text-align: end;
+}
+li {
+    list-style: none;
+    margin: 10px;
+}
+
+select {
+    font-size: 20px;
 }
