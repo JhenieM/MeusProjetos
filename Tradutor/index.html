@@ -2,43 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="icon" href="IMG/icon-traduzir-pae.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    
     <title>Translate App</title>
 </head>
 <body>
-    <div class="container-box">
-        <div class="all-box">
-            
-            <div class="box">
-                <div class="traduzir-box">
-                    <li class="list partida">
-                        <select></select>
-                    </li>
-                    <div class="traduzir-box-insider">
-                        <textarea class="text-area" maxlength="5000"></textarea>
+    <main>
+        <div class="containerMain">
+            <div class="all-box">
+                
+                <div class="box">
+                    <div class="traduzir-box">
+                        <li class="list partida">
+                            <select></select>
+                        </li>
+                        <div class="traduzir-box-insider">
+                            <textarea class="textFrom" maxlength="5000"></textarea>
+                        </div>
+                        <div class="box-bottom">
+                            <span>0/600</span>
+                        </div>
                     </div>
-                    <div class="box-bottom">
-                        <span>0/600</span>
-                    </div>
-                </div>
 
-                <div class="tradutor-box">
-                    <li class="list destino">
-                        <select></select>
-                    </li>
-                    <div class="tradutor-box-insider">
-                        <span class="tradutorBox"></span>
+                    <div class="tradutor-box">
+                        <li class="list partida">
+                            <select></select>
+                        </li>
+                        <div class="tradutor-box-insider">
+                            <textarea class="textTo" maxlength="5000" disabled></textarea>
+                        </div>
+                        <div class="box-bottom">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
+                                <path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z"/>
+                                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z"/>
+                                <path d="M8.707 11.182A4.5 4.5 0 0 0 10.025 8a4.5 4.5 0 0 0-1.318-3.182L8 5.525A3.5 3.5 0 0 1 9.025 8 3.5 3.5 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06"/>
+                              </svg></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="button-box" id="button">
-                <button onclick="submit()" class="button-translate">Translate</button>
+                
+                <div class="button-box" id="button">
+                    <button onclick="submit()" class="button-translate">Translate</button>
+                </div>
             </div>
         </div>
-    </div> 
+    </main>
+
+    <footer><p>© 2024 Jhenifer Villarroel</p></footer>
 
     <script src="SCRIPT/script.js" defer></script>
     <script src="SCRIPT/countries.js"></script>

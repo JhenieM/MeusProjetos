@@ -1,6 +1,6 @@
 const selectTag = document.querySelectorAll('select');
-const textoTraduzir = document.querySelector('.text-area');
-const traduzido = document.querySelector('.tradutorBox');
+const textoTraduzir = document.querySelector('.textFrom');
+const traduzido = document.querySelector('.textTo');
 
 selectTag.forEach((tag, id) => {
         for (const cod_pais in countries) {
