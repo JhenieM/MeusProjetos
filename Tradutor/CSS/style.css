@@ -19,15 +19,18 @@ main {
     gap: 20px;
     margin: 20px 0px;
 }
-.traduzir-box, .tradutor-box{
+.traduzir-box,
+.tradutor-box {
     width: 520px;
     height: auto;
     border: 1px solid black;
 }
-.traduzir-box-insider, .tradutor-box-insider {
+.traduzir-box-insider,
+.tradutor-box-insider {
     height: auto;
 }
-.textFrom, .textTo {
+.textFrom,
+.textTo {
     position: relative;
     resize: none;
     width: calc(100% - 55px);
@@ -50,7 +53,13 @@ main {
     text-transform: uppercase;
     cursor: pointer;
 }
-.textFrom, .textTo {
+.btn-aud {
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+.textFrom,
+.textTo {
     position: relative;
     left: 0;
     right: 0;

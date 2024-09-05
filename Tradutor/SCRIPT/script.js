@@ -42,3 +42,19 @@ function submit() {
                 traduzido.innerHTML = data.responseData.translatedText;
         });
 }
+
+function audio() {
+        if(traduzido.value != '') {
+                let aud = new SpeechSynthesisUtterance(traduzido.value);
+                window.speechSynthesis.speak(aud);
+        }
+}
+
+function contagem() {
+        let caracteres = textoTraduzir.value;
+        document.querySelector('.contagem').innerText = `${caracteres.length}/600`;
+
+        if(caracteres.length == 5){
+                console.log("Exedeu!");
+        }
+      }
