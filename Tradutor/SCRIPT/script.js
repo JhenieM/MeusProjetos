@@ -1,3 +1,15 @@
+/* TexteArea responsivo 
+
+var textArea = document.querySelectorAll('textarea');
+
+const tamanhoTraduzir = () => {
+    textArea.style.height = 'auto';
+    textArea.style.height = `${textArea.scrollHeight}px`;
+};
+
+textArea.addEventListener('input', tamanhoTraduzir);
+tamanhoTraduzir();*/
+
 const selectTag = document.querySelectorAll('select');
 const textoTraduzir = document.querySelector('.textFrom');
 const traduzido = document.querySelector('.textTo');
@@ -24,6 +36,7 @@ selectTag.forEach((tag, id) => {
                 tag.insertAdjacentHTML("beforeend", opcao);
         }
 });
+
 
 function submit() {
         let text = textoTraduzir.value;
