@@ -2,7 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Almarai", sans-serif;
+    font-family: "Rubik", sans-serif;
+    color: white;
 }
 
 html,
@@ -42,6 +43,7 @@ main {
     background-color: white;
     width: 500px;
     margin: 20px;
+    border-radius: 5px;
     background-color: rgb(47, 48, 97);
 }
 
@@ -57,13 +59,13 @@ main {
     background-color: transparent;
     outline: none;
     border: none;
-    padding: 20px 10px;
+    padding: 20px;
     font-size: 30px;
     overflow: hidden;
 }
 
 .button-translate {
-    width: 300px;
+    width: 200px;
     padding: 10px 15px;
     background-color: rgb(60, 60, 174);
     border: none;
@@ -89,16 +91,50 @@ main {
 .box-bottom span svg {
     cursor: pointer;
 }
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px 0px 0px;
+}
+.btn-clear {
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Comfortaa';
+}
 
 li {
     list-style: none;
     margin: 10px;
 }
-
+.list-select {
+    width: 150px;
+    background: white;
+    padding: 3px 6px;
+    border-radius: 20px;
+   
+}
 select {
-    border: none;
-    font-size: 20px;
-    outline: 0;
+   background-color: transparent;
+   color: black;
+   border: none;
+   font-size: 18px;
+   outline: 0;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+option {
+    background-color: white;
+    color: black;
+}
+
+option:hover {
+background-color: #f2f2f2;
 }
 
 footer {
@@ -111,7 +147,7 @@ footer {
 }
 
 footer p {
-    color: white;
+    color: black;
 }
 
 footer,

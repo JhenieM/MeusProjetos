@@ -68,6 +68,11 @@ function contagem() {
         document.querySelector('.contagem').innerText = `${caracteres.length}/600`;
 
         if(caracteres.length == 5){
-                console.log("Exedeu!");
+                textoTraduzir.disabled = true;
+                //document.getElementById("obs").disabled = enable;
         }
-      }
+}
+
+function clear() {
+        textoTraduzir.innerText = "";
+}
