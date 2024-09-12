@@ -3,14 +3,17 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Rubik", sans-serif;
-    color: white;
+    color: black;
 }
 
 html,
 body {
     height: 100%;
     overflow: hidden;
-    /* background-image: url(../IMG/wave.svg); */
+    background: url(../IMG/blob.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 main {
@@ -39,12 +42,11 @@ main {
 .traduzir-box,
 .tradutor-box {
     height: auto;
-    border: 1px solid black;
     background-color: white;
-    width: 500px;
+    width: 540px;
     margin: 20px;
     border-radius: 5px;
-    background-color: rgb(47, 48, 97);
+    background-color: white;
 }
 
 .traduzir-box-insider,
@@ -95,15 +97,16 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 20px 0px 0px;
+    padding: 0px 16px 0px 0px;
 }
 .btn-clear {
     background-color: transparent;
     font-size: 20px;
-    color: white;
+    color: black;
     border: none;
     cursor: pointer;
-    font-family: 'Comfortaa';
+    font-family: 'Nunito', sans-serif;
+    font-weight: 750;
 }
 
 li {
@@ -143,14 +146,9 @@ footer {
     justify-content: center;
     padding: 18px 0;
     width: 100%;
-    bottom: 10px;
+    bottom: 15px;
 }
 
 footer p {
-    color: black;
-}
-
-footer,
-main {
-    background-color: white;
+    color: white;
 }

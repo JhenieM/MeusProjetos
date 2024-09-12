@@ -74,5 +74,6 @@ function contagem() {
 }
 
 function clear() {
-        textoTraduzir.innerText = "";
+        //document.querySelectorAll('textarea').innerText = "nothing";
+        console.log("limpo");
 }
