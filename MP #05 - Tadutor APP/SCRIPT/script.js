@@ -39,21 +39,23 @@ selectTag.forEach((tag, id) => {
 
 
 function submit() {
-        let text = textoTraduzir.value;
-        let traduzirDe = selectTag[0].value;
-        let traduzirPara = selectTag[1].value;
-        const apiURL = `https://api.mymemory.translated.net/get?q=${text}&langpair=${traduzirDe}|${traduzirPara}`;
-        // let urlUp = encodeURIComponent(apiURL);
-        console.log(apiURL);
+        if (textoTraduzir.value != "") {
+                let text = textoTraduzir.value;
+                let traduzirDe = selectTag[0].value;
+                let traduzirPara = selectTag[1].value;
+                const apiURL = `https://api.mymemory.translated.net/get?q=${text}&langpair=${traduzirDe}|${traduzirPara}`;
+                // let urlUp = encodeURIComponent(apiURL);
+                console.log(apiURL);
 
-        fetch(apiURL)
-        .then(response => 
-                response.json())
-        .then(data => {
-                // console.log(data.matches[1].translation);
-                //data.responseData.translatedText
-                traduzido.innerHTML = data.responseData.translatedText;
-        });
+                fetch(apiURL)
+                .then(response => 
+                        response.json())
+                .then(data => {
+                        // console.log(data.matches[1].translation);
+                        //data.responseData.translatedText
+                        traduzido.innerHTML = data.responseData.translatedText;
+                });
+        }     
 }
 
 function audio() {
@@ -67,13 +69,19 @@ function contagem() {
         let caracteres = textoTraduzir.value;
         document.querySelector('.contagem').innerText = `${caracteres.length}/600`;
 
+
         if(caracteres.length == 5){
                 textoTraduzir.disabled = true;
+                caracteres.style.color = 'red'; 
                 //document.getElementById("obs").disabled = enable;
         }
 }
 
-function clear() {
+/*function clear() {
         //document.querySelectorAll('textarea').innerText = "nothing";
+        console.log("limpo");
+}*/
+
+function clear() {
         console.log("limpo");
 }
