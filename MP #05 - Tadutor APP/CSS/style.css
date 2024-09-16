@@ -79,6 +79,7 @@ main {
 }
 
 .btn-aud {
+    display: none;
     background-color: transparent;
     outline: none;
     border: none;
