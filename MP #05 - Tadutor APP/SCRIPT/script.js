@@ -1,4 +1,4 @@
-const speak = document.getElementsByClassName('btn-audio');
+const speak = document.getElementById('audio');
 
 /*TexteArea responsivo*/ 
 const textarea = document.getElementById('textMain');
@@ -7,11 +7,9 @@ const textareas = document.getElementById('textOther');
         const adjustHeight = () => {
             textarea.style.height = 'auto';
             textarea.style.height = `${textarea.scrollHeight}px`;
-            textarea.style.margin = '10px';
 
             textareas.style.height = 'auto';
             textareas.style.height = `${textarea.scrollHeight}px`;
-            textareas.style.margin = '10px';
         };
 
         textarea.addEventListener('input', adjustHeight);
@@ -87,11 +85,9 @@ function contagem() {
         }
 }
 
-/*function clear() {
-        //document.querySelectorAll('textarea').innerText = "nothing";
-        console.log("limpo");
-}*/
-
-function clear() {
-        console.log("limpo");
-}
+const btn = document.getElementById("btn");
+btn.addEventListener("click", function () {
+        if(textarea.value != ""){
+                textarea.value = "";
+        }
+ });
