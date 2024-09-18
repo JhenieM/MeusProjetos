@@ -10,10 +10,6 @@ const textareas = document.getElementById('textOther');
 
             textareas.style.height = 'auto';
             textareas.style.height = `${textarea.scrollHeight}px`;
-
-            if (textarea.style.height > 124) {
-                console.log("scrollbar");
-            }
         };
 
         textarea.addEventListener('input', adjustHeight);
@@ -21,6 +17,7 @@ const textareas = document.getElementById('textOther');
         adjustHeight();
 
 /*TRADUTOR*/
+/*Select Languages*/
 const selectTag = document.querySelectorAll('select');
 const textoTraduzir = document.querySelector('.textFrom');
 const traduzido = document.querySelector('.textTo');
@@ -47,7 +44,7 @@ selectTag.forEach((tag, id) => {
         }
 });
 
-
+/*Pesquisar na API - Traduzir*/
 function submit() {
         if (textoTraduzir.value != "") {
                 speak.style.display = 'block';
@@ -77,6 +74,7 @@ function audio() {
         }
 }
 
+/*Contagem de caracteres*/
 function contagem() {
         let caracteres = textoTraduzir.value;
         document.querySelector('.contagem').innerText = `${caracteres.length}/600`;
@@ -89,6 +87,7 @@ function contagem() {
         }
 }
 
+/*Som*/
 const btn = document.getElementById("btn");
 btn.addEventListener("click", function () {
         if(textarea.value != ""){
