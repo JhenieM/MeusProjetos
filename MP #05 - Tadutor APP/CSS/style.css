@@ -162,5 +162,6 @@ footer p {
 @media screen and (max-width: 920px){
     .box {
         display: grid;
+        padding-bottom: 25px;
     }
 }

@@ -10,6 +10,10 @@ const textareas = document.getElementById('textOther');
 
             textareas.style.height = 'auto';
             textareas.style.height = `${textarea.scrollHeight}px`;
+
+            if (textarea.style.height > 124) {
+                console.log("scrollbar");
+            }
         };
 
         textarea.addEventListener('input', adjustHeight);
@@ -89,5 +93,7 @@ const btn = document.getElementById("btn");
 btn.addEventListener("click", function () {
         if(textarea.value != ""){
                 textarea.value = "";
+                textarea.style.height = 'inherit';
+                textareas.style.height = 'inherit';
         }
  });
