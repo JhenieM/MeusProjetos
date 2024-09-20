@@ -34,6 +34,7 @@ body {
     padding: 10px 0px;
     font-size: 20px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 #span {
     font-size: 70px;
