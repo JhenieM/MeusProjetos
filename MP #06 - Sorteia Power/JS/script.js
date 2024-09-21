@@ -7,8 +7,16 @@ function sortear() {
         var letra = letras[index];
         return span = document.getElementById('span').innerText = `${letra}`;
     }
+    function save() {
+        const span = document.createElement('span');
+        span.innerText = `${choose(letras)}`;
+        span.id = 'caixa-sorteadas';
 
+        const sorteada = document.getElementById('sorteadas');
+        sorteada.appendChild(span);
+    }
     choose(letras);
+    save();
 }
 
 //console.log(choose(letras));

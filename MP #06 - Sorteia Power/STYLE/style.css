@@ -1,42 +1,87 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-family: 'Signika Negative', sans-serif;
 }
-
 html,
 body {
     height: 100%;
     overflow: hidden;
+    background-image: url(../IMG/background.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-.container-main {
-    display: grid;
-    place-items: center;
-    height: calc(100vh - 35px);
-    width: 100%;
-    overflow: hidden;
+header {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
 }
-.box {
+main {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    height: calc(100dvh - 80px);
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+.letras-sorteadas {
+    width: calc(100% - 100px);
+    height: 100px;
+    /* width: clamp(1200px, 20vw, 50px);
+    height: clamp(50px, 30vw, 100px); */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 }
+#caixa-sorteadas {
+    display: grid;
+    place-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    border-radius: 50%;
+}
+.box {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    text-align: center;
+}
 .letra {
-    width: 350px;
-    height: 350px;
+    width: clamp(150px, 30vw, 250px);
+    height: clamp(150px, 30vw, 250px);
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.sortear-btn {
-    padding: 10px 0px;
-    font-size: 20px;
-    text-transform: uppercase;
-    cursor: pointer;
+    transition: width 0.2s ease, height 0.2s ease;
 }
 #span {
-    font-size: 70px;
-    color: yellow;
+    font-size: clamp(50px, 10vw, 90px);
+    color: white;
+}
+.sortear-btn {
+    width: clamp(120px, 30vw, 200px);
+    height: clamp(10px, 30vw, 50px);
+    font-size: clamp(20px, 30vw, 20px);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: ease;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
