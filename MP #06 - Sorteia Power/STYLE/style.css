@@ -31,24 +31,26 @@ main {
 }
 .letras-sorteadas {
     width: calc(100% - 100px);
-    height: 100px;
+    height: 110px;
     /* width: clamp(1200px, 20vw, 50px);
     height: clamp(50px, 30vw, 100px); */
-    background-color: white;
-    display: flex;
+    background-color: #040127;
+    display: none;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    border-radius: 10px;
 }
 #caixa-sorteadas {
     display: grid;
     place-items: center;
     width: 80px;
     height: 80px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     font-size: 50px;
     border-radius: 50%;
+    font-weight: 550;
 }
 .box {
     width: 300px;
@@ -67,6 +69,7 @@ main {
     justify-content: center;
     align-items: center;
     transition: width 0.2s ease, height 0.2s ease;
+    border-radius: 10px;
 }
 #span {
     font-size: clamp(50px, 10vw, 90px);
@@ -79,6 +82,12 @@ main {
     text-transform: uppercase;
     cursor: pointer;
     transition: ease;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+.sortear-btn:hover {
+    background-color: gray;
 }
 footer {
     display: flex;

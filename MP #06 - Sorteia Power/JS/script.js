@@ -1,7 +1,10 @@
 /*Sortear */
 letras = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
+const boxLetras = document.getElementById('sorteadas');
+
 function sortear() {
+    boxLetras.style.display = "flex";
     function choose(letras) {
         var index = Math.floor(Math.random() * letras.length);
         var letra = letras[index];
