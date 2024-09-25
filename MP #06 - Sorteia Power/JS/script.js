@@ -4,11 +4,8 @@ letras = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R
 const boxLetras = document.getElementById('sorteadas');
 const colorBall = getComputedStyle(span).getPropertyValue('--color');
 
-var green = 'rgb(1 137 39)';
-var blue = 'rgb(0 77 123)';
-var yellow = 'rgb(244 241 100)';
-var red = 'rgb(247 0 87)';
-
+var cores = ['rgb(1 137 39)', 'rgb(0 77 123)', 'rgb(244 241 100)', 'rgb(247 0 87)'];
+var indice = 0;
 function sortear() {
     boxLetras.style.display = "flex";
 
@@ -24,22 +21,17 @@ function sortear() {
 
         const sorteada = document.getElementById('sorteadas');
         sorteada.appendChild(span);
+
+        span.style.backgroundoColors = cores[indice];
+        indice = (indice + 1) % cores.length;
     }
-    function colors() {
-        if(colorBall === blue) {
-            var hai = document.body.style.setProperty('--color', green);
-        }else if (colorBall === green) {
-            var hai = document.body.style.setProperty('--color', red);
-        }else if (colorBall === red) {
-            var hai = document.body.style.setProperty('--color', yellow);
-        }else {
-            var hai =  document.body.style.setProperty('--color', blue);
-        }
-        console.log(hai)
-    }
+    // const colors = () => {
+    //     document.body.style.setProperty('--color', cores[Math.floor(Math.random() * cores.length)]);
+    // }
+
     choose(letras);
     save();
-    colors();
+    //colors();
 }
 
 //console.log(choose(letras));
