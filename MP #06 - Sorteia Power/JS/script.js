@@ -22,7 +22,7 @@ function sortear() {
 
         boxLetras.appendChild(span);
 
-        span.style.backgroundColor = cores[indice];
+        span.style.border = `20px solid ${cores[indice]}`;
         indice = (indice + 1) % cores.length;
     }
 
