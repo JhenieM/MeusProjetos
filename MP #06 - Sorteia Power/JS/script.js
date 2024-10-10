@@ -1,10 +1,17 @@
-letras = ['A','B','C','D','E','F','G','I','L','O','P','R','S','T','X','Y'];
+letras = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
 const boxLetras = document.getElementById('sorteadas');
 var cores = ['rgb(1 137 39)', 'rgb(0 77 123)', 'rgb(190 186 0)', 'rgb(247 0 87)'];
 var indice = 0;
 
 function sortear() {
+
+    /* Reproduzir o áudio */
+    const audio = document.getElementById('meuAudio');
+    audio.play().catch(function(error) {
+        console.error('Erro ao reproduzir o áudio: ', error);
+    });
+
     boxLetras.style.display = "flex";
 
     //Sortear letras
